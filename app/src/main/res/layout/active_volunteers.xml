@@ -3,7 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< Updated upstream
     xmlns:app="http://schemas.android.com/apk/res-auto">
+=======
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+>>>>>>> Stashed changes
 
     <TextView
         android:layout_width="300sp"
@@ -32,7 +37,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
+<<<<<<< Updated upstream
         android:src="@drawable/ellipse_18"/>
+=======
+        android:src="@drawable/ellipse_18" />
+>>>>>>> Stashed changes
 
     <ImageView
         android:id="@+id/ellipse_19"
@@ -50,6 +59,7 @@
         android:layout_marginTop="500dp"
         android:src="@drawable/ellipse_20"/>
 
+<<<<<<< Updated upstream
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="430dp"
@@ -351,6 +361,15 @@
         </LinearLayout>
 
     </ScrollView>
+=======
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center"
+        android:layout_height="430dp"
+        tools:listitem="@layout/user_card_item" />
+>>>>>>> Stashed changes
 
     <FrameLayout
         android:id="@+id/menu"

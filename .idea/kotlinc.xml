@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="KotlinJpsPluginSettings">
+<<<<<<< Updated upstream
     <option name="version" value="1.9.24" />
+=======
+    <option name="version" value="2.1.0" />
+>>>>>>> Stashed changes
   </component>
 </project>

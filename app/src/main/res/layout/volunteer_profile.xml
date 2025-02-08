@@ -95,10 +95,18 @@
 
             <TextView
                 android:id="@+id/userphone"
+<<<<<<< Updated upstream
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/volunteer_phone"
                 android:layout_gravity="end"
+=======
+                android:layout_width="150sp"
+                android:layout_height="wrap_content"
+                android:text="@string/volunteer_phone"
+                android:layout_gravity="end"
+                android:gravity="end"
+>>>>>>> Stashed changes
                 android:textSize="16sp"
                 android:fontFamily="@font/my_font_regular"/>
 
@@ -119,10 +127,18 @@
 
             <TextView
                 android:id="@+id/useremail"
+<<<<<<< Updated upstream
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/volunteer_email"
                 android:layout_gravity="end"
+=======
+                android:layout_width="250sp"
+                android:layout_height="wrap_content"
+                android:text="@string/volunteer_email"
+                android:layout_gravity="end"
+                android:gravity="end"
+>>>>>>> Stashed changes
                 android:textSize="16sp"
                 android:fontFamily="@font/my_font_regular"/>
 
@@ -142,8 +158,13 @@
 
             <TextView
                 android:id="@+id/userbio"
+<<<<<<< Updated upstream
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+=======
+                android:layout_width="match_parent"
+                android:layout_height="230sp"
+>>>>>>> Stashed changes
                 android:text="@string/userbio"
                 android:textSize="16sp"
                 android:layout_marginTop="25dp"

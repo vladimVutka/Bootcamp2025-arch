@@ -3,7 +3,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< Updated upstream
     xmlns:app="http://schemas.android.com/apk/res-auto">
+=======
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <Button
+        android:id="@+id/refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/refresh"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/btn_style2"
+        app:backgroundTint="@null"
+        android:layout_gravity="center_horizontal"/>
+>>>>>>> Stashed changes
 
     <TextView
         android:layout_width="300sp"
@@ -22,6 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/sign_up">
+<<<<<<< Updated upstream
         <TextView
             android:layout_width="wrap_content"
             android:gravity="center"
@@ -33,6 +49,21 @@
             android:textColor="@color/dark_green"
             android:textSize="18sp"
             android:layout_marginBottom="8sp"/>
+=======
+
+        <TextView
+            android:id="@+id/toVolunteerList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="8sp"
+            android:fontFamily="@font/my_font_medium"
+            android:gravity="center"
+            android:text="@string/to_second_list"
+            android:textColor="@color/dark_green"
+            android:textSize="18sp" />
+>>>>>>> Stashed changes
         <View
             android:layout_gravity="bottom|center"
             android:layout_margin="11sp"
@@ -49,6 +80,7 @@
         android:layout_marginTop="40dp"
         android:src="@drawable/ellipse_9"/>
 
+<<<<<<< Updated upstream
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="430dp"
@@ -352,6 +384,15 @@
         </LinearLayout>
 
     </ScrollView>
+=======
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center"
+        android:layout_height="430dp"
+        tools:listitem="@layout/center_card_item" />
+>>>>>>> Stashed changes
 
     <FrameLayout
         android:id="@+id/menu"
@@ -411,4 +452,8 @@
 
     </FrameLayout>
 
+<<<<<<< Updated upstream
 </FrameLayout>
+=======
+</FrameLayout>
+>>>>>>> Stashed changes

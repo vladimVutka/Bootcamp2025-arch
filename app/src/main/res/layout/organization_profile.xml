@@ -26,7 +26,12 @@
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
         android:src="@drawable/flip_left"
+<<<<<<< Updated upstream
         android:layout_margin="30dp"/>
+=======
+        android:layout_margin="30dp"
+        android:contentDescription="@string/center_list_header" />
+>>>>>>> Stashed changes
 
     <LinearLayout
         android:id="@+id/profile_layout"
@@ -50,25 +55,47 @@
             android:layout_gravity="center"
             android:layout_height="wrap_content"
             android:fillViewport="true"
+<<<<<<< Updated upstream
             android:marginBottom="20dp">
+=======
+            android:layout_marginBottom="20dp"
+            android:contentDescription="@string/re">
+>>>>>>> Stashed changes
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/org_photo" />
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/org_photo"
+<<<<<<< Updated upstream
                     android:layout_gravity="center"/>
+=======
+                    android:layout_gravity="center" />
+
+>>>>>>> Stashed changes
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/org_photo"
+<<<<<<< Updated upstream
                     android:layout_gravity="end"/>
+=======
+                    android:layout_gravity="end" />
+>>>>>>> Stashed changes
             </LinearLayout>
 
         </ScrollView>
@@ -122,18 +149,30 @@
         </FrameLayout>
 
         <com.google.android.material.button.MaterialButton
+<<<<<<< Updated upstream
             android:id="@+id/log_in_btn"
             android:layout_width="350dp"
             android:layout_height="32sp"
             app:backgroundTint="@color/coral"
             app:cornerRadius="8dp"
+=======
+            android:id="@+id/log_in_btn1"
+            android:layout_width="350dp"
+            android:layout_height="48dp"
+>>>>>>> Stashed changes
             android:background="@drawable/btn_style"
             android:layout_gravity="center"
             android:text="@string/join"
             android:textSize="16sp"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/my_font_regular"
+<<<<<<< Updated upstream
             android:padding="0sp"/>
+=======
+            android:padding="0sp"
+            app:backgroundTint="@color/coral"
+            app:cornerRadius="8dp" />
+>>>>>>> Stashed changes
 
     </LinearLayout>
 
@@ -150,7 +189,14 @@
             android:background="@android:color/transparent"
             android:src="@drawable/list_white"
             android:layout_margin="40dp"
+<<<<<<< Updated upstream
             android:elevation="10dp"/>
+=======
+            android:elevation="10dp"
+            android:contentDescription="@string/email"
+            tools:ignore="TouchTargetSizeCheck" />
+
+>>>>>>> Stashed changes
         <ImageButton
             android:id="@+id/map_ic"
             android:layout_width="wrap_content"
@@ -159,7 +205,14 @@
             android:src="@drawable/map_ic"
             android:layout_marginTop="40dp"
             android:layout_gravity="center_horizontal"
+<<<<<<< Updated upstream
             android:elevation="10dp"/>
+=======
+            android:elevation="10dp"
+            android:contentDescription="@string/cancel"
+            tools:ignore="TouchTargetSizeCheck" />
+
+>>>>>>> Stashed changes
         <ImageButton
             android:id="@+id/profile_ic"
             android:layout_width="wrap_content"
@@ -168,7 +221,14 @@
             android:src="@drawable/profile_ic"
             android:layout_margin="40dp"
             android:layout_gravity="end"
+<<<<<<< Updated upstream
             android:elevation="10dp"/>
+=======
+            android:elevation="10dp"
+            android:contentDescription="@string/bio_hint"
+            tools:ignore="TouchTargetSizeCheck" />
+
+>>>>>>> Stashed changes
         <ImageButton
             android:id="@+id/menu_circle"
             android:layout_width="wrap_content"
@@ -176,7 +236,12 @@
             android:background="@android:color/transparent"
             android:src="@drawable/ellipse_menu"
             android:layout_margin="32dp"
+<<<<<<< Updated upstream
             android:elevation="9dp"/>
+=======
+            android:elevation="9dp"
+            android:contentDescription="@string/center_list_header" />
+>>>>>>> Stashed changes
 
         <androidx.cardview.widget.CardView
             android:id="@+id/menu_card"
@@ -194,4 +259,8 @@
 
     </FrameLayout>
 
+<<<<<<< Updated upstream
 </FrameLayout>
+=======
+</FrameLayout>
+>>>>>>> Stashed changes

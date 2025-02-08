@@ -1,10 +1,44 @@
 <?xml version="1.0" encoding="utf-8" ?>
+<<<<<<< Updated upstream
 <FrameLayout android:id="@+id/center_list_screen"
+=======
+<FrameLayout xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/center_list_screen"
+>>>>>>> Stashed changes
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+<<<<<<< Updated upstream
+=======
+    <FrameLayout
+        android:id="@+id/error"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@+id/errorText"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="27dp"
+            android:text="TextView" />
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/refresh"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/btn_style1"
+        app:backgroundTint="@null"
+        android:layout_gravity="center_horizontal"/>
+
+>>>>>>> Stashed changes
     <TextView
         android:layout_width="300sp"
         android:gravity="center"
@@ -22,6 +56,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/sign_up">
+<<<<<<< Updated upstream
         <TextView
             android:layout_width="wrap_content"
             android:gravity="center"
@@ -33,6 +68,21 @@
             android:textColor="@color/green"
             android:textSize="18sp"
             android:layout_marginBottom="8sp"/>
+=======
+
+        <TextView
+            android:id="@+id/toCenterList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="8sp"
+            android:fontFamily="@font/my_font_medium"
+            android:gravity="center"
+            android:text="@string/to_first_list"
+            android:textColor="@color/green"
+            android:textSize="18sp" />
+>>>>>>> Stashed changes
         <View
             android:layout_gravity="bottom|center"
             android:layout_margin="11sp"
@@ -49,6 +99,7 @@
         android:layout_marginTop="40dp"
         android:src="@drawable/ellipse_10"/>
 
+<<<<<<< Updated upstream
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="430dp"
@@ -350,6 +401,15 @@
         </LinearLayout>
 
     </ScrollView>
+=======
+    <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/content"
+    android:layout_width="wrap_content"
+    android:layout_marginTop="50dp"
+    android:layout_gravity="center"
+    android:layout_height="430dp"
+    tools:listitem="@layout/user_card_item" />
+>>>>>>> Stashed changes
 
     <FrameLayout
         android:id="@+id/menu"
@@ -364,7 +424,14 @@
             android:background="@android:color/transparent"
             android:src="@drawable/list_white"
             android:layout_margin="40dp"
+<<<<<<< Updated upstream
             android:elevation="10dp"/>
+=======
+            android:elevation="10dp"
+            android:contentDescription="@string/list"
+            tools:ignore="TouchTargetSizeCheck" />
+
+>>>>>>> Stashed changes
         <ImageButton
             android:id="@+id/map_ic"
             android:layout_width="wrap_content"
@@ -374,7 +441,13 @@
             android:padding="10dp"
             android:layout_marginTop="30dp"
             android:layout_gravity="center_horizontal"
+<<<<<<< Updated upstream
             android:elevation="10dp"/>
+=======
+            android:elevation="10dp"
+            android:contentDescription="@string/active_volunteer_list_header" />
+
+>>>>>>> Stashed changes
         <ImageButton
             android:id="@+id/profile_ic"
             android:layout_width="wrap_content"
@@ -383,7 +456,14 @@
             android:src="@drawable/profile_ic"
             android:layout_margin="40dp"
             android:layout_gravity="end"
+<<<<<<< Updated upstream
             android:elevation="10dp"/>
+=======
+            android:elevation="10dp"
+            android:contentDescription="@string/app_name"
+            tools:ignore="TouchTargetSizeCheck" />
+
+>>>>>>> Stashed changes
         <ImageButton
             android:id="@+id/menu_circle"
             android:layout_width="wrap_content"
@@ -391,7 +471,12 @@
             android:background="@android:color/transparent"
             android:src="@drawable/ellipse_menu"
             android:layout_margin="32dp"
+<<<<<<< Updated upstream
             android:elevation="9dp"/>
+=======
+            android:elevation="9dp"
+            android:contentDescription="@string/bio_hint" />
+>>>>>>> Stashed changes
 
         <androidx.cardview.widget.CardView
             android:id="@+id/menu_card"
@@ -409,4 +494,8 @@
 
     </FrameLayout>
 
+<<<<<<< Updated upstream
 </FrameLayout>
+=======
+</FrameLayout>
+>>>>>>> Stashed changes
