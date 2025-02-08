@@ -17,14 +17,14 @@ object AuthNetworkDataSource {
 
     suspend fun isUserExist(login: String): Result<Boolean> = withContext(Dispatchers.IO) {
         runCatching {
-            val result = Network.client.get("http://10.0.2.2:9000/api/person/username/$login")
+            val result = Network.client.get("http://192.168.1.102:8080/api/1.0/login")
             result.status != HttpStatusCode.OK
         }
     }
 
     suspend fun login(token: String): Result<Unit> = withContext(Dispatchers.IO) {
         runCatching {
-            val result = Network.client.get("http://10.0.2.2:9000/api/person/login") {
+            val result = Network.client.get("http://192.168.1.102:8080/api/1.0/login") {
                 headers {
                     append(HttpHeaders.Authorization, token)
                 }
@@ -36,7 +36,7 @@ object AuthNetworkDataSource {
         }
     }
 
-    suspend fun register(login: String, password: String): Result<Unit> =
+    suspend fun register(login: String, password: String, firstName: String, secondName: String, lastName: String, organizationName: String, info: String, phoneNumber: String): Result<Unit> =
         withContext(Dispatchers.IO) {
             runCatching {
                 val result = Network.client.post("http://10.0.2.2:9000/api/person/register") {
@@ -45,8 +45,13 @@ object AuthNetworkDataSource {
                         AuthRegisterDto(
                             username = login,
                             password = password,
-                            name = login,
-                            email = "$login@example.com"
+                            name = firstName,
+                            email = "$login@example.com",
+                            secondName = secondName,
+                            lastName = lastName,
+                            organizationName = organizationName,
+                            info = info,
+                            phoneNumber = phoneNumber,
                         )
                     )
                 }
