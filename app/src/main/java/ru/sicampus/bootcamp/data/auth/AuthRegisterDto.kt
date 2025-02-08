@@ -5,7 +5,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class AuthRegisterDto(
-    @SerialName("firstName")
+    @SerialName("name")
     val name: String,
     @SerialName("secondName")
     val secondName: String,
@@ -21,6 +21,10 @@ data class AuthRegisterDto(
     val organizationName: String,
     @SerialName("email")
     val email: String,
+    @SerialName("telegramLink")
+    val telegramLink: String,
     @SerialName("info")
     val info: String,
+    @SerialName("photoUrl")
+    val photoUrl: String,
 )

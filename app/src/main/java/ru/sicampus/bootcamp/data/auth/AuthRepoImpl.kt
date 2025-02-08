@@ -7,8 +7,19 @@ class AuthRepoImpl(
     private val authStorageDataSource: AuthStorageDataSource,
 ) : AuthRepo {
 
-    override suspend fun register(login: String, password: String, name: String, secondName: String, lastName: String, organizationName: String, info: String, phoneNumber: String): Result<Unit> {
-        return authNetworkDataSource.register(login, password, name, secondName, lastName, organizationName, info, phoneNumber)
+    override suspend fun register(
+        login: String,
+        password: String,
+        email: String,
+        name: String,
+        secondName: String,
+        lastName: String,
+        phoneNumber: String,
+        info: String,
+        telegramLink: String,
+        photoUrl: String,
+    ): Result<Unit> {
+        return authNetworkDataSource.register(login, password, email, name, secondName, lastName, info, phoneNumber, telegramLink, photoUrl,)
     }
 
     override suspend fun login(login: String, password: String): Result<Unit> {

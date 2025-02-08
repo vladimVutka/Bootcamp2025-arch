@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import ru.sicampus.bootcamp.R
 import ru.sicampus.bootcamp.databinding.AuthorizationBinding
+import ru.sicampus.bootcamp.ui.Register.RegisterFragment
 import ru.sicampus.bootcamp.ui.map.MapFragment
 import ru.sicampus.bootcamp.utils.collectWithLifecycle
 
@@ -23,6 +24,11 @@ class AuthFragment: Fragment(R.layout.authorization) {
             .replace(R.id.main, MapFragment())
             .commitAllowingStateLoss()*/
         _viewBinding = AuthorizationBinding.bind(view)
+        viewBinding.signUp.setOnClickListener{
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.main, RegisterFragment())
+                .commitAllowingStateLoss()
+        }
         viewBinding.logInBtn.setOnClickListener {
           viewModel.clickNext(
                 viewBinding.enterLogin.text.toString(),

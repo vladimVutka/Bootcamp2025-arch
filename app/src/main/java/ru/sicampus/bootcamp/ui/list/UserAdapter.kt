@@ -14,7 +14,7 @@ class UserAdapter : ListAdapter<UserEntity, UserAdapter.ViewHolder>(UserDiff) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
-            ItemUserBinding.inflate(
+            UserCardItemBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
@@ -27,11 +27,11 @@ class UserAdapter : ListAdapter<UserEntity, UserAdapter.ViewHolder>(UserDiff) {
     }
 
     class ViewHolder(
-        private val binding: ItemUserBinding,
+        private val binding: UserCardItemBinding,
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: UserEntity) {
             binding.title.text = item.name
-            binding.description.text = item.email
+            binding.discription.text = item.email
             //Picasso.get().load(item.photoUrl)
                // .resize(64, 64)
                // .centerCrop()

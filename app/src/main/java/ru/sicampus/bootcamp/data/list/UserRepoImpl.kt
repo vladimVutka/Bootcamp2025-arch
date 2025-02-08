@@ -19,11 +19,6 @@ class UserRepoImpl(
                     secondName = dto.secondName?: return@mapNotNull null,
                     lastName = dto.lastName?: return@mapNotNull null,
                     username = dto.username?: return@mapNotNull null,
-                    phoneNumber = dto.phoneNumber?: return@mapNotNull null,
-                    organizationName = dto.organizationName?: return@mapNotNull null,
-                    info = dto.info?: return@mapNotNull null,
-
-                    photoUrl = dto.photoUrl ?: return@mapNotNull null
                 )
             }
         }

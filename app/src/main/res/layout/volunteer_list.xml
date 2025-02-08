@@ -67,9 +67,9 @@
         android:id="@+id/content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="150dp"
-        tools:listitem="@layout/item_user" />
+        android:layout_marginTop="190dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/user_card_item" />
 
     <FrameLayout
         android:id="@+id/error"

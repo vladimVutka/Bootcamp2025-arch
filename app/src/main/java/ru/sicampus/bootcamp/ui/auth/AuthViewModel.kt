@@ -67,11 +67,7 @@ class AuthViewModel(
 
     private fun getStateShow(error: Throwable? = null): State.Show {
         return State.Show(
-            titleText = when (isNewUser) {
-                true -> getApplication<Application>().getString(R.string.sign_up)
-                false -> getApplication<Application>().getString(R.string.sign_in)
-                null -> getApplication<Application>().getString(R.string.Привет)
-            },
+            titleText =getApplication<Application>().getString(R.string.Привет),
             showPassword = isNewUser != null,
             buttonText = getApplication<Application>().getString(R.string.login),
             errorText = error?.toString(),
