@@ -19,6 +19,9 @@ class AuthFragment: Fragment(R.layout.authorization) {
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+      /*  parentFragmentManager.beginTransaction()
+            .replace(R.id.main, MapFragment())
+            .commitAllowingStateLoss()*/
         _viewBinding = AuthorizationBinding.bind(view)
         viewBinding.logInBtn.setOnClickListener {
           viewModel.clickNext(

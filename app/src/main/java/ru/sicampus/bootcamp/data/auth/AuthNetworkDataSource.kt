@@ -15,12 +15,6 @@ import ru.sicampus.bootcamp.data.Network
 
 object AuthNetworkDataSource {
 
-    suspend fun isUserExist(login: String): Result<Boolean> = withContext(Dispatchers.IO) {
-        runCatching {
-            val result = Network.client.get("http://192.168.1.102:8080/api/1.0/login")
-            result.status != HttpStatusCode.OK
-        }
-    }
 
     suspend fun login(token: String): Result<Unit> = withContext(Dispatchers.IO) {
         runCatching {

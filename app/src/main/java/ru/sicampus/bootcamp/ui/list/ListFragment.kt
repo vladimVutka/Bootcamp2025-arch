@@ -31,7 +31,6 @@ class ListFragment : Fragment(R.layout.volunteer_list) {
             when (state) {
                 is ListViewModel.State.Loading -> Unit
                 is ListViewModel.State.Show -> {
-                    Log.d("ListFragment", "Items: ${state.items}")
                     adapter.submitList(state.items)
                 }
 
