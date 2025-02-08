@@ -27,7 +27,7 @@ class UserNetworkDataSource {
             if (result.status != HttpStatusCode.OK) {
                 error("Status ${result.status}")
             }
-            Log.d("result.status","${Network.client.get("http://192.168.1.102:8080/api/1.0/user/free")}")
+            Log.d("result.status","${result}")
             result.body()
         }
     }
