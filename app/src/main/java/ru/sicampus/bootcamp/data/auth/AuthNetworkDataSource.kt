@@ -30,7 +30,7 @@ object AuthNetworkDataSource {
         }
     }
 
-    suspend fun register(login: String, password: String, name: String, secondName: String, lastName: String, organizationName: String, info: String, phoneNumber: String, telegramLink: String, photoUrl: String,): Result<Unit> =
+    suspend fun register(login: String, password: String, name: String, secondName: String, lastName: String, organizationName: String, phoneNumber: String, info: String, photoUrl: String,): Result<Unit> =
         withContext(Dispatchers.IO) {
             runCatching {
                 val result = Network.client.post("http://192.168.1.102:8080/api/1.0/register") {
@@ -40,13 +40,12 @@ object AuthNetworkDataSource {
                             username = login,
                             password = password,
                             name = name,
-                            email = "$login@example.com",
                             secondName = secondName,
                             lastName = lastName,
+                            email = "$login@example.com",
                             organizationName = organizationName,
                             info = info,
                             phoneNumber = phoneNumber,
-                            telegramLink = telegramLink,
                             photoUrl = photoUrl,
                         )
                     )
@@ -58,4 +57,5 @@ object AuthNetworkDataSource {
             }
 
         }
+
 }

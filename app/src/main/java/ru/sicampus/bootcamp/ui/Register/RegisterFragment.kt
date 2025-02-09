@@ -1,6 +1,7 @@
 package ru.sicampus.bootcamp.ui.Register
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -22,7 +23,7 @@ class RegisterFragment : Fragment(R.layout.registration) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         _viewBinding = RegistrationBinding.bind(view)
           viewBinding.logInBtn.setOnClickListener {
-              val l: List<String> = viewBinding.enterName.text.split("");
+              val l: List<String> = viewBinding.enterName.text.split(" ");
             viewModel.clickNext(
                 viewBinding.enterEmailReg3.text.toString(),
                 viewBinding.enterPasswordReg.text.toString(),
@@ -32,9 +33,10 @@ class RegisterFragment : Fragment(R.layout.registration) {
                 l[2],
                 viewBinding.enterPhone.text.toString(),
                 viewBinding.enterPasswordReg.text.toString(),
-                "https://plus.unsplash",
+                //"https://plus.unsplash",
                 ""
             )
+              Log.d("logL", "${l[0]}"+ " " + "${l[1]}" + " " + "${l[2]}")
        }
 
         viewModel.action.collectWithLifecycle(this) { action ->

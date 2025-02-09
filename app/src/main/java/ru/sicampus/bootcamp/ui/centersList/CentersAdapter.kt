@@ -5,14 +5,15 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import ru.sicampus.bootcamp.databinding.UserCardItemBinding
+import ru.sicampus.bootcamp.databinding.CenterCardItemBinding
+import ru.sicampus.bootcamp.domain.list.CentersEntity
 import ru.sicampus.bootcamp.domain.list.UserEntity
 
-class UserAdapter : ListAdapter<UserEntity, UserAdapter.ViewHolder>(UserDiff) {
+class CentersAdapter : ListAdapter<CentersEntity, CentersAdapter.ViewHolder>(CentersDiff) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
-            UserCardItemBinding.inflate(
+            CenterCardItemBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
@@ -25,21 +26,21 @@ class UserAdapter : ListAdapter<UserEntity, UserAdapter.ViewHolder>(UserDiff) {
     }
 
     class ViewHolder(
-        private val binding: UserCardItemBinding,
+        private val binding: CenterCardItemBinding,
     ) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: UserEntity) {
+        fun bind(item: CentersEntity) {
             binding.title.text = item.name
-            binding.discription.text = item.email
+            binding.discription.text = item.address
         }
 
     }
 
-    object UserDiff : DiffUtil.ItemCallback<UserEntity>() {
-        override fun areItemsTheSame(oldItem: UserEntity, newItem: UserEntity): Boolean {
+    object CentersDiff : DiffUtil.ItemCallback<CentersEntity>() {
+        override fun areItemsTheSame(oldItem: CentersEntity, newItem: CentersEntity): Boolean {
             return oldItem.name == newItem.name
         }
 
-        override fun areContentsTheSame(oldItem: UserEntity, newItem: UserEntity): Boolean {
+        override fun areContentsTheSame(oldItem: CentersEntity, newItem: CentersEntity): Boolean {
             return oldItem == newItem
         }
     }

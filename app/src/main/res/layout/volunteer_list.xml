@@ -66,8 +66,9 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/content"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="190dp"
+        android:layout_height="173pt"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/user_card_item" />
 

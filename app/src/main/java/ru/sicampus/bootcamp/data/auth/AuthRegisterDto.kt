@@ -21,8 +21,6 @@ data class AuthRegisterDto(
     val organizationName: String,
     @SerialName("email")
     val email: String,
-    @SerialName("telegramLink")
-    val telegramLink: String,
     @SerialName("info")
     val info: String,
     @SerialName("photoUrl")

@@ -16,10 +16,9 @@ class AuthRepoImpl(
         lastName: String,
         phoneNumber: String,
         info: String,
-        telegramLink: String,
         photoUrl: String,
     ): Result<Unit> {
-        return authNetworkDataSource.register(login, password, email, name, secondName, lastName, info, phoneNumber, telegramLink, photoUrl,)
+        return authNetworkDataSource.register(login, password, email, name, secondName, lastName, info, phoneNumber, photoUrl)
     }
 
     override suspend fun login(login: String, password: String): Result<Unit> {

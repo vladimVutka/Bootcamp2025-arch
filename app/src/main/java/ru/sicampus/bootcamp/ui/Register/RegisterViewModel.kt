@@ -39,12 +39,11 @@ class RegisterViewModel(
         lastName:String,
         phoneNumber: String,
         info: String,
-        telegramLink: String,
         photoUrl: String,
     ) {
         viewModelScope.launch {
             _state.emit(State.Loading)
-            registerUserUseCase(login, password, email, name, secondName, lastName, phoneNumber, info, telegramLink, photoUrl).fold(
+            registerUserUseCase(login, password, email, name, secondName, lastName, phoneNumber, info, photoUrl).fold(
                 onSuccess = { openAuth() },
                 onFailure = { error ->
                     _state.emit(State.Error(error.message.toString()))
@@ -70,7 +69,7 @@ class RegisterViewModel(
         viewModelScope.launch {
             _state.emit(State.Loading)
             _state.emit(
-                registerUserUseCase.invoke(login, password, email, firstName, secondName, lastName, phoneNumber, info, telegramLink, photoUrl).fold(
+                registerUserUseCase.invoke(login, password, email, firstName, secondName, lastName, phoneNumber, info, photoUrl).fold(
                     onSuccess = { data ->
                         State.Show(data)
                     },
