@@ -57,6 +57,11 @@ class AnotherProfileFragment : Fragment(R.layout.volunteer_profile) {
                 .replace(R.id.main, CentersListFragment())
                 .commitAllowingStateLoss()
         }
+        viewBinding.profileIc.setOnClickListener{
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.main, ProfileFragment())
+                .commitAllowingStateLoss()
+        }
     }
 
     override fun onDestroyView() {

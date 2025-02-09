@@ -40,7 +40,7 @@ class MapFragment : Fragment(R.layout.map), OnMapReadyCallback {
 
         viewBinding.listIc.setOnClickListener {
             parentFragmentManager.beginTransaction()
-                .replace(R.id.main, ListFragment())
+                .replace(R.id.main, CentersListFragment())
                 .commitAllowingStateLoss()
         }
         viewBinding.profileIc.setOnClickListener{
