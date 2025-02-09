@@ -8,11 +8,12 @@ import androidx.fragment.app.replace
 import androidx.fragment.app.viewModels
 import ru.sicampus.bootcamp.R
 import ru.sicampus.bootcamp.databinding.VolunteerListBinding
+import ru.sicampus.bootcamp.ui.list.AnotherProfileFragment
 import ru.sicampus.bootcamp.ui.centersList.CentersListFragment
 import ru.sicampus.bootcamp.ui.map.MapFragment
 import ru.sicampus.bootcamp.utils.collectWithLifecycle
 
-class ListFragment : Fragment(R.layout.volunteer_list) {
+class ListFragment : Fragment(R.layout.volunteer_list), OpenProfile {
     private var _viewBinding: VolunteerListBinding? = null
     private val viewBinding: VolunteerListBinding get() = _viewBinding!!
 
@@ -23,7 +24,7 @@ class ListFragment : Fragment(R.layout.volunteer_list) {
         _viewBinding = VolunteerListBinding.bind(view)
         viewBinding.refresh.setOnClickListener { viewModel.clickRefresh() }
 
-        val adapter = UserAdapter()
+        val adapter = UserAdapter(this)
         viewBinding.content.adapter = adapter
 
         viewModel.state.collectWithLifecycle(this) { state ->
@@ -61,5 +62,10 @@ class ListFragment : Fragment(R.layout.volunteer_list) {
     override fun onDestroyView() {
         _viewBinding = null
         super.onDestroyView()
+    }
+    override fun goToProfile(username: String) {
+       parentFragmentManager.beginTransaction()
+           .replace(R.id.main, AnotherProfileFragment()).addToBackStack(null)
+           .commitAllowingStateLoss()
     }
 }

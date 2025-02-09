@@ -28,5 +28,22 @@ class ProfileRepoImpl (
 
         }
     }
+    override suspend fun getData1(): Result<ProfileEntity> {
+        val token = authStorageDataSource.token
+            ?: return Result.failure(IllegalStateException("token is null"))
+        val login = login.login1
+        return userNetworkDataSource.getUserByLogin(token, login).map {  dto ->
+            ProfileEntity(
+                name = dto.name,
+                email = dto.email,
+                secondName = dto.secondName,
+                lastName = dto.lastName,
+                username = dto.username,
+                phoneNumber = dto.phoneNumber ,
+                info = dto.info,
+                organizationName = dto.organizationName,
+            )
+        }
+    }
 }
 

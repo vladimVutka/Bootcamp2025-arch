@@ -23,6 +23,4 @@ data class AuthRegisterDto(
     val email: String,
     @SerialName("info")
     val info: String,
-    @SerialName("photoUrl")
-    val photoUrl: String,
 )
