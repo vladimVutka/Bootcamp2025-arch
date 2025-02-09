@@ -11,8 +11,10 @@ import ru.sicampus.bootcamp.R
 import ru.sicampus.bootcamp.Service.MapService
 import ru.sicampus.bootcamp.databinding.MapBinding
 import ru.sicampus.bootcamp.ui.auth.AuthViewModel
+import ru.sicampus.bootcamp.ui.centersList.CentersListFragment
 import ru.sicampus.bootcamp.ui.list.CenterListViewModel
 import ru.sicampus.bootcamp.ui.list.ListFragment
+import ru.sicampus.bootcamp.ui.list.ProfileFragment
 import ru.sicampus.bootcamp.utils.collectWithLifecycle
 
 class MapFragment : Fragment(R.layout.map), OnMapReadyCallback {
@@ -41,12 +43,16 @@ class MapFragment : Fragment(R.layout.map), OnMapReadyCallback {
                 .replace(R.id.main, ListFragment())
                 .commitAllowingStateLoss()
         }
+        viewBinding.profileIc.setOnClickListener{
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.main, ProfileFragment())
+                .commitAllowingStateLoss()}
 
         viewModel.action.collectWithLifecycle(this) { action ->
             when (action) {
                 AuthViewModel.Action.GoToList -> {
                     parentFragmentManager.beginTransaction()
-                        .replace(R.id.main, ListFragment())
+                        .replace(R.id.main, CentersListFragment())
                         .commitAllowingStateLoss()
                 }
             }

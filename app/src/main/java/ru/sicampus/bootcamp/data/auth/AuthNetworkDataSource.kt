@@ -57,5 +57,17 @@ object AuthNetworkDataSource {
             }
 
         }
-
+    suspend fun findByLogin(token: String, login: String): Result<Unit> = withContext(Dispatchers.IO) {
+        runCatching {
+            val result = Network.client.get("http://192.168.1.102:8080/api/1.0/user/username/${login}") {
+                headers {
+                    append(HttpHeaders.Authorization, token)
+                }
+            }
+            if (result.status != HttpStatusCode.OK) {
+                error("Status ${result.status}: ${result.body<String>()}")
+            }
+            Unit
+        }
+    }
 }

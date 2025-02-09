@@ -36,7 +36,7 @@ class MapService(
                             googleMap.addMarker(
                                 MarkerOptions()
                                     .title(center.name)
-                                    .position(LatLng(center.lat.toDouble(), center.lon.toDouble()))
+                                    .position(LatLng(center.lon.toDouble(), center.lat.toDouble()))
                             )
                         }
                     }

@@ -10,6 +10,7 @@ import ru.sicampus.bootcamp.databinding.CenterListBinding
 import ru.sicampus.bootcamp.ui.list.CenterListViewModel
 import ru.sicampus.bootcamp.ui.list.CentersAdapter
 import ru.sicampus.bootcamp.ui.list.ListViewModel
+import ru.sicampus.bootcamp.ui.list.ProfileFragment
 import ru.sicampus.bootcamp.ui.map.MapFragment
 import ru.sicampus.bootcamp.utils.collectWithLifecycle
 
@@ -45,7 +46,10 @@ class CentersListFragment : Fragment(R.layout.center_list) {
             }
 
         }
-
+        viewBinding.profileIc.setOnClickListener{
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.main, ProfileFragment())
+                .commitAllowingStateLoss()}
         viewBinding.mapIc.setOnClickListener{
             parentFragmentManager.beginTransaction()
                 .replace(R.id.main, MapFragment())

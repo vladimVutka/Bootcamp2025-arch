@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.replace
 import androidx.fragment.app.viewModels
 import ru.sicampus.bootcamp.R
 import ru.sicampus.bootcamp.databinding.VolunteerListBinding
@@ -40,7 +41,11 @@ class ListFragment : Fragment(R.layout.volunteer_list) {
             }
 
         }
-
+        viewBinding.profileIc.setOnClickListener{
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.main, ProfileFragment())
+                .commitAllowingStateLoss()
+        }
         viewBinding.mapIc.setOnClickListener{
             parentFragmentManager.beginTransaction()
                 .replace(R.id.main, MapFragment())

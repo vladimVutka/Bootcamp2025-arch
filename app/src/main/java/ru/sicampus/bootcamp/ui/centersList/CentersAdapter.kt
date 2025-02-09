@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import ru.sicampus.bootcamp.databinding.CenterCardItemBinding
 import ru.sicampus.bootcamp.domain.list.CentersEntity
-import ru.sicampus.bootcamp.domain.list.UserEntity
 
 class CentersAdapter : ListAdapter<CentersEntity, CentersAdapter.ViewHolder>(CentersDiff) {
 
@@ -29,8 +28,10 @@ class CentersAdapter : ListAdapter<CentersEntity, CentersAdapter.ViewHolder>(Cen
         private val binding: CenterCardItemBinding,
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: CentersEntity) {
-            binding.title.text = item.name
-            binding.discription.text = item.address
+            if(item.name.length >= 20)
+            binding.title.text = (item.name.substring(0, 20) + "...") else binding.title.text = item.name
+            if(item.address.length >= 33)
+                binding.discription.text = item.address.substring(0, 33) + "..." else binding.discription.text = item.address
         }
 
     }
