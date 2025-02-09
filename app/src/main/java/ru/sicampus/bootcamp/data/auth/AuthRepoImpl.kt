@@ -18,7 +18,7 @@ class AuthRepoImpl(
         info: String,
         photoUrl: String,
     ): Result<Unit> {
-        return authNetworkDataSource.register(login, password, email, name, secondName, lastName, info, phoneNumber, photoUrl)
+        return authNetworkDataSource.register(login, password, email, name, secondName, lastName, phoneNumber, info, photoUrl)
     }
 
     override suspend fun login(login: String, password: String): Result<Unit> {

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.replace
 import androidx.fragment.app.viewModels
 import ru.sicampus.bootcamp.R
 import ru.sicampus.bootcamp.databinding.RegistrationBinding
@@ -22,6 +23,11 @@ class RegisterFragment : Fragment(R.layout.registration) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         _viewBinding = RegistrationBinding.bind(view)
+        viewBinding.back.setOnClickListener{
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.main, AuthFragment())
+                .commitAllowingStateLoss()
+        }
           viewBinding.logInBtn.setOnClickListener {
               val l: List<String> = viewBinding.enterName.text.split(" ");
             viewModel.clickNext(
@@ -32,7 +38,7 @@ class RegisterFragment : Fragment(R.layout.registration) {
                 l[1],
                 l[2],
                 viewBinding.enterPhone.text.toString(),
-                viewBinding.enterPasswordReg.text.toString(),
+                viewBinding.enterBio.text.toString(),
                 //"https://plus.unsplash",
                 ""
             )

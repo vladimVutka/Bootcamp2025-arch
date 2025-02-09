@@ -9,6 +9,7 @@ import ru.sicampus.bootcamp.R
 import ru.sicampus.bootcamp.databinding.ProfileBinding
 import ru.sicampus.bootcamp.databinding.VolunteerListBinding
 import ru.sicampus.bootcamp.ui.Profile.ProfilViewModel
+import ru.sicampus.bootcamp.ui.auth.AuthFragment
 import ru.sicampus.bootcamp.ui.centersList.CentersListFragment
 import ru.sicampus.bootcamp.ui.map.MapFragment
 import ru.sicampus.bootcamp.utils.collectWithLifecycle
@@ -32,6 +33,7 @@ class ProfileFragment : Fragment(R.layout.profile) {
                     viewBinding.userphone.text = state.items.phoneNumber
                     viewBinding.useremail.text = state.items.email
                     viewBinding.userbio.text = state.items.info
+                    Log.d("FFF", "${state.items.info}")
                 }
 
                 is ProfilViewModel.State.Error -> {
@@ -44,6 +46,11 @@ class ProfileFragment : Fragment(R.layout.profile) {
         viewBinding.mapIc.setOnClickListener{
             parentFragmentManager.beginTransaction()
                 .replace(R.id.main, MapFragment())
+                .commitAllowingStateLoss()
+        }
+        viewBinding.logOut.setOnClickListener{
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.main, AuthFragment())
                 .commitAllowingStateLoss()
         }
         viewBinding.listIc.setOnClickListener{

@@ -63,7 +63,6 @@ class RegisterViewModel(
                             lastName:String,
                             phoneNumber: String,
                             info: String,
-                            telegramLink: String,
                             photoUrl: String,
                             ) {
         viewModelScope.launch {

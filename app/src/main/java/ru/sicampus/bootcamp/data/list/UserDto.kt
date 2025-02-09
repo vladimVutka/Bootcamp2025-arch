@@ -22,5 +22,5 @@ data class UserDto(
     @SerialName("info")
     val info: String,
     @SerialName("photoUrl")
-    val photoUrl: String,
+    val photoUrl: String?,
 )
