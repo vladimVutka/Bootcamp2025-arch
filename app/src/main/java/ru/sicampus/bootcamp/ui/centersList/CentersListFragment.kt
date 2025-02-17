@@ -4,9 +4,12 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.ListFragment
+import androidx.fragment.app.replace
 import androidx.fragment.app.viewModels
+import ru.sicampus.bootcamp.OpenCenterProfile
 import ru.sicampus.bootcamp.R
 import ru.sicampus.bootcamp.databinding.CenterListBinding
+import ru.sicampus.bootcamp.ui.auth.VolunteerCenterFragment
 import ru.sicampus.bootcamp.ui.list.CenterListViewModel
 import ru.sicampus.bootcamp.ui.list.CentersAdapter
 import ru.sicampus.bootcamp.ui.list.ListViewModel
@@ -14,7 +17,7 @@ import ru.sicampus.bootcamp.ui.list.ProfileFragment
 import ru.sicampus.bootcamp.ui.map.MapFragment
 import ru.sicampus.bootcamp.utils.collectWithLifecycle
 
-class CentersListFragment : Fragment(R.layout.center_list) {
+class CentersListFragment : Fragment(R.layout.center_list), OpenCenterProfile {
     private var _viewBinding: CenterListBinding? = null
     private val viewBinding: CenterListBinding get() = _viewBinding!!
 
@@ -25,7 +28,7 @@ class CentersListFragment : Fragment(R.layout.center_list) {
         _viewBinding = CenterListBinding.bind(view)
         viewBinding.refresh.setOnClickListener { viewModel.clickRefresh() }
 
-        val adapter = CentersAdapter()
+        val adapter = CentersAdapter(this)
         viewBinding.content.adapter = adapter
 
         viewModel.state.collectWithLifecycle(this) { state ->
@@ -66,4 +69,9 @@ class CentersListFragment : Fragment(R.layout.center_list) {
         _viewBinding = null
         super.onDestroyView()
     }
+
+    override fun openCenterProfile() {
+        parentFragmentManager.beginTransaction().replace(R.id.main, VolunteerCenterFragment()).commitAllowingStateLoss()
+    }
+
 }

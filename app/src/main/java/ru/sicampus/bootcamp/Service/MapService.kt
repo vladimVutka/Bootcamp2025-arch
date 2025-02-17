@@ -1,6 +1,7 @@
 package ru.sicampus.bootcamp.Service
 
 import android.content.Context
+import android.util.Log
 import android.widget.Toast
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -10,14 +11,14 @@ import com.google.android.gms.maps.model.MarkerOptions
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import ru.sicampus.bootcamp.data.auth.AuthStorageDataSource
-import ru.sicampus.bootcamp.data.list.CentersRepoImpl
-import ru.sicampus.bootcamp.domain.list.CentersEntity
+import ru.sicampus.bootcamp.OpenCenterProfile
+import ru.sicampus.bootcamp.data.auth.login
 import ru.sicampus.bootcamp.ui.list.CenterListViewModel
 
-class MapService(
+class MapService (
     private val context: Context,
-    private val centerListViewModel: CenterListViewModel
+    private val centerListViewModel: CenterListViewModel,
+    private val listener: OpenCenterProfile
 ): OnMapReadyCallback, GoogleMap.OnMapClickListener, GoogleMap.OnMapLongClickListener, GoogleMap.OnMarkerClickListener {
 
     override fun onMapReady(googleMap: GoogleMap) {
@@ -61,7 +62,11 @@ class MapService(
     }
 
     override fun onMarkerClick(marker: Marker): Boolean {
+        login.centerAdress = marker.title.toString()
+        Log.d("ddddddd", "${marker.title.toString()}")
+        listener.openCenterProfile()
         return false
     }
+
 
 }

@@ -7,17 +7,20 @@ import androidx.fragment.app.viewModels
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
+import ru.sicampus.bootcamp.OpenCenterProfile
 import ru.sicampus.bootcamp.R
 import ru.sicampus.bootcamp.Service.MapService
 import ru.sicampus.bootcamp.databinding.MapBinding
 import ru.sicampus.bootcamp.ui.auth.AuthViewModel
+import ru.sicampus.bootcamp.ui.auth.VolunteerCenterFragment
 import ru.sicampus.bootcamp.ui.centersList.CentersListFragment
 import ru.sicampus.bootcamp.ui.list.CenterListViewModel
-import ru.sicampus.bootcamp.ui.list.ListFragment
 import ru.sicampus.bootcamp.ui.list.ProfileFragment
 import ru.sicampus.bootcamp.utils.collectWithLifecycle
 
-class MapFragment : Fragment(R.layout.map), OnMapReadyCallback {
+
+
+class MapFragment : Fragment(R.layout.map), OnMapReadyCallback, OpenCenterProfile {
     private var _viewBinding: MapBinding? = null
     private val viewBinding: MapBinding get() = _viewBinding!!
 
@@ -32,7 +35,7 @@ class MapFragment : Fragment(R.layout.map), OnMapReadyCallback {
         _viewBinding = MapBinding.bind(view)
 
         // Инициализация MapService
-        mapService = MapService(requireContext(), viewModelMap)
+        mapService = MapService(requireContext(), viewModelMap, this)
 
         // Получаем SupportMapFragment и уведомляем, когда карта готова к использованию
         val mapFragment = childFragmentManager.findFragmentById(R.id.mapView) as SupportMapFragment
@@ -67,5 +70,11 @@ class MapFragment : Fragment(R.layout.map), OnMapReadyCallback {
     override fun onDestroyView() {
         _viewBinding = null
         super.onDestroyView()
+    }
+
+    override fun openCenterProfile() {
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.main, VolunteerCenterFragment()).addToBackStack(null)
+            .commitAllowingStateLoss()
     }
 }

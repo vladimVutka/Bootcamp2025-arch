@@ -63,7 +63,7 @@ class ListFragment : Fragment(R.layout.volunteer_list), OpenProfile {
         _viewBinding = null
         super.onDestroyView()
     }
-    override fun goToProfile(username: String) {
+    override fun goToProfile() {
        parentFragmentManager.beginTransaction()
            .replace(R.id.main, AnotherProfileFragment()).addToBackStack(null)
            .commitAllowingStateLoss()

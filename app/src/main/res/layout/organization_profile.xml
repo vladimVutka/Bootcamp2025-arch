@@ -130,13 +130,13 @@
             android:id="@+id/log_in_btn1"
             android:layout_width="350dp"
             android:layout_height="48dp"
-            android:background="@drawable/btn_style"
             android:layout_gravity="center"
-            android:text="@string/join"
-            android:textSize="16sp"
             android:layout_marginTop="10dp"
+            android:background="@drawable/btn_style"
             android:fontFamily="@font/my_font_regular"
             android:padding="0sp"
+            android:text="@string/join"
+            android:textSize="16sp"
             app:backgroundTint="@color/coral"
             app:cornerRadius="8dp" />
 

@@ -5,10 +5,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import ru.sicampus.bootcamp.OpenCenterProfile
+import ru.sicampus.bootcamp.data.auth.login
 import ru.sicampus.bootcamp.databinding.CenterCardItemBinding
 import ru.sicampus.bootcamp.domain.list.CentersEntity
 
-class CentersAdapter : ListAdapter<CentersEntity, CentersAdapter.ViewHolder>(CentersDiff) {
+class CentersAdapter (private val listener: OpenCenterProfile): ListAdapter<CentersEntity, CentersAdapter.ViewHolder>(CentersDiff) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
@@ -16,7 +18,7 @@ class CentersAdapter : ListAdapter<CentersEntity, CentersAdapter.ViewHolder>(Cen
                 LayoutInflater.from(parent.context),
                 parent,
                 false
-            )
+            ), listener
         )
     }
 
@@ -26,8 +28,13 @@ class CentersAdapter : ListAdapter<CentersEntity, CentersAdapter.ViewHolder>(Cen
 
     class ViewHolder(
         private val binding: CenterCardItemBinding,
+        private val listener: OpenCenterProfile,
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: CentersEntity) {
+            binding.btn.setOnClickListener{
+                login.centerAdress = item.name
+            listener.openCenterProfile()
+            }
             if(item.name.length >= 20)
             binding.title.text = (item.name.substring(0, 20) + "...") else binding.title.text = item.name
             if(item.address.length >= 33)

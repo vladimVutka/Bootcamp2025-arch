@@ -11,7 +11,7 @@ import ru.sicampus.bootcamp.databinding.UserCardItemBinding
 import ru.sicampus.bootcamp.domain.list.UserEntity
 
 interface OpenProfile {
-    fun goToProfile(username: String)
+    fun goToProfile()
 }
 
 class UserAdapter(private val listener: OpenProfile) : ListAdapter<UserEntity, UserAdapter.ViewHolder>(UserDiff) {
@@ -37,7 +37,7 @@ class UserAdapter(private val listener: OpenProfile) : ListAdapter<UserEntity, U
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: UserEntity) {
             binding.btn.setOnClickListener{
-                listener.goToProfile(item.username)
+                listener.goToProfile()
                 login.login1 = item.username
                 Log.d("ESEESE", "${login.login1}")
             }
