@@ -12,7 +12,7 @@ import ru.sicampus.bootcamp.data.Network
 import ru.sicampus.bootcamp.domain.list.ProfileEntity
 import kotlin.math.log
 
-class UserNetworkDataSource {
+class   UserNetworkDataSource {
 
     suspend fun getUsers(
         token: String
