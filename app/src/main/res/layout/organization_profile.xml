@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_height="match_parent"
-    android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:id="@+id/volunteer_profile_screen">
 
     <ImageView
@@ -29,118 +29,106 @@
         android:layout_margin="30dp"
         android:contentDescription="@string/center_list_header" />
 
-    <LinearLayout
-        android:id="@+id/profile_layout"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="110sp"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:layout_marginTop="110dp"> <!-- Изменено на dp -->
 
-        <TextView
-            android:id="@+id/profile_text"
-            android:layout_width="300dp"
+        <LinearLayout
+            android:id="@+id/profile_layout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginBottom="30dp"
-            android:fontFamily="@font/my_font_medium"
-            android:text="@string/org_name"
-            android:textSize="30sp" />
+            android:orientation="vertical">
 
-        <ScrollView
-            android:layout_width="950dp"
-            android:layout_gravity="center"
-            android:layout_height="wrap_content"
-            android:fillViewport="true"
-            android:layout_marginBottom="20dp"
-            android:contentDescription="@string/re">
+            <TextView
+                android:id="@+id/profile_text"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginBottom="30dp"
+                android:fontFamily="@font/my_font_medium"
+                android:text="@string/org_name"
+                android:textSize="30sp" />
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/org_photo" />
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginBottom="15dp"
+                android:text="@string/org_description"
+                android:textSize="18sp"
+                android:fontFamily="@font/my_font_regular"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
-                <ImageView
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/org_photo" />
+                    android:text="@string/org_active_vol"
+                    android:layout_marginLeft="30dp"
+                    android:textSize="14sp"/>
 
-                <ImageView
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/org_photo"
-                    android:layout_gravity="center" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/org_photo"
-                    android:layout_gravity="end" />
+                    android:text="@string/org_number_of_vol"
+                    android:layout_marginLeft="2dp"
+                    android:textSize="14sp"/>
             </LinearLayout>
 
-        </ScrollView>
-
-        <TextView
-            android:layout_marginLeft="30dp"
-            android:id="@+id/description"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:text="@string/org_description"
-            android:textSize="18sp"
-            android:fontFamily="@font/my_font_regular"
-            android:layout_marginBottom="15dp"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
+            <FrameLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/org_active_vol"
-                android:layout_marginLeft="30dp"
-                android:textSize="14sp"/>
+                android:layout_marginBottom="30dp"
+                android:layout_marginLeft="30dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/org_number_of_vol"
-                android:layout_marginLeft="2dp"
-                android:textSize="14sp"/>
-        </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/check_out"
+                    android:fontFamily="@font/my_font_regular"
+                    android:textColor="@color/coral"/>
 
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp"
-            android:layout_marginLeft="30dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/check_out"
+                <View
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="19dp"
+                    android:layout_width="83dp"
+                    android:background="@color/coral"
+                    android:layout_height="1dp"/>
+            </FrameLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/log_in_btn1"
+                android:layout_width="350dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/btn_style"
                 android:fontFamily="@font/my_font_regular"
-                android:textColor="@color/coral"/>
-            <View
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="19sp"
-                android:layout_width="83sp"
-                android:background="@color/coral"
-                android:layout_height="1dp"/>
-        </FrameLayout>
+                android:text="@string/join"
+                android:textSize="16sp"
+                app:backgroundTint="@color/coral"
+                app:cornerRadius="8dp" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/log_in_btn1"
-            android:layout_width="350dp"
-            android:layout_height="48dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/btn_style"
-            android:fontFamily="@font/my_font_regular"
-            android:padding="0sp"
-            android:text="@string/join"
-            android:textSize="16sp"
-            app:backgroundTint="@color/coral"
-            app:cornerRadius="8dp" />
-
-    </LinearLayout>
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="135dp"
+                tools:srcCompat="@tools:sample/avatars" />
+        </LinearLayout>
+    </ScrollView>
 
     <FrameLayout
         android:id="@+id/menu"
@@ -204,9 +192,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/menu" />
-
         </androidx.cardview.widget.CardView>
-
     </FrameLayout>
 
 </FrameLayout>

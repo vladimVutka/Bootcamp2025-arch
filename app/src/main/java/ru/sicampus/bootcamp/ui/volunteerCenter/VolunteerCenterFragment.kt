@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.squareup.picasso.Picasso
 import ru.sicampus.bootcamp.R
 import ru.sicampus.bootcamp.databinding.OrganizationProfileBinding
 import ru.sicampus.bootcamp.ui.Profile.ProfilViewModel
@@ -65,6 +66,9 @@ class VolunteerCenterFragment: Fragment(R.layout.organization_profile)
                 is VolunteerCenterViewModel.State.Show -> {
                     viewBinding.profileText.text = state.items.name
                     viewBinding.description.text = state.items.info
+                    Picasso.get().load(state.items.imagePhoto).resize(256, 256)
+                        .centerCrop()
+                        .into(viewBinding.img)
                     Log.d("FFF", "${state.items.name}")
                 }
 
