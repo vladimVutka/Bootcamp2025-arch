@@ -54,4 +54,5 @@ dependencies {
     implementation(libs.ktor.serialization.json)
     implementation(libs.picasso)
     implementation(libs.play.services.maps)
+    implementation(libs.androidx.fragment)
 }

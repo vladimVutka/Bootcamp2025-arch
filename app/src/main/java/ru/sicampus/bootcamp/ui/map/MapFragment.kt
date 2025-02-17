@@ -41,15 +41,15 @@ class MapFragment : Fragment(R.layout.map), OnMapReadyCallback, OpenCenterProfil
         val mapFragment = childFragmentManager.findFragmentById(R.id.mapView) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
-        viewBinding.listIc.setOnClickListener {
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.main, CentersListFragment())
-                .commitAllowingStateLoss()
-        }
-        viewBinding.profileIc.setOnClickListener{
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.main, ProfileFragment())
-                .commitAllowingStateLoss()}
+//        viewBinding.listIc.setOnClickListener {
+//            parentFragmentManager.beginTransaction()
+//                .replace(R.id.main, CentersListFragment())
+//                .commitAllowingStateLoss()
+//        }
+//        viewBinding.profileIc.setOnClickListener{
+//            parentFragmentManager.beginTransaction()
+//                .replace(R.id.main, ProfileFragment())
+//                .commitAllowingStateLoss()}
 
         viewModel.action.collectWithLifecycle(this) { action ->
             when (action) {

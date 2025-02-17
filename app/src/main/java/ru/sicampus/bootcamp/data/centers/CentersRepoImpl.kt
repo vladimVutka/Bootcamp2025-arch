@@ -23,6 +23,7 @@ class CentersRepoImpl(
                     lat = dto.lat?: return@mapNotNull null,
                     lon = dto.lon?: return@mapNotNull null,
                     info = dto.info?: return@mapNotNull null,
+                    image_photo = dto.image_photo?: return@mapNotNull null,
                 )
             }
         }
@@ -36,6 +37,7 @@ class CentersRepoImpl(
                     lat = dto.lat,
                     lon = dto.lon,
                     info = dto.info,
+                    image_photo = dto.image_photo
                 )
             }
     }

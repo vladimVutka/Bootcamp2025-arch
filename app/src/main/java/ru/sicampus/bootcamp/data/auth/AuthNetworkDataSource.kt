@@ -18,7 +18,7 @@ object AuthNetworkDataSource {
 
     suspend fun login(token: String): Result<Unit> = withContext(Dispatchers.IO) {
         runCatching {
-            val result = Network.client.get("http://192.168.1.102:8080/api/1.0/login") {
+            val result = Network.client.get("http://192.168.0.121:8080/api/1.0/login") {
                 headers {
                     append(HttpHeaders.Authorization, token)
                 }
@@ -33,7 +33,7 @@ object AuthNetworkDataSource {
     suspend fun register(login: String, password: String, email: String, name: String, secondName: String, lastName: String,   info: String, phoneNumber: String, organizationName: String,): Result<Unit> =
         withContext(Dispatchers.IO) {
             runCatching {
-                val result = Network.client.post("http://192.168.1.102:8080/api/1.0/register") {
+                val result = Network.client.post("http://192.168.0.121:8080/api/1.0/register") {
                     contentType(ContentType.Application.Json)
                     setBody(
                         AuthRegisterDto(
@@ -58,7 +58,7 @@ object AuthNetworkDataSource {
         }
     suspend fun findByLogin(token: String, login: String): Result<Unit> = withContext(Dispatchers.IO) {
         runCatching {
-            val result = Network.client.get("http://192.168.1.102:8080/api/1.0/user/username/${login}") {
+            val result = Network.client.get("http://192.168.0.121:8080/api/1.0/user/username/${login}") {
                 headers {
                     append(HttpHeaders.Authorization, token)
                 }

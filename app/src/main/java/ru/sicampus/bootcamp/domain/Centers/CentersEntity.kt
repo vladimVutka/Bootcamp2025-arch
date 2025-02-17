@@ -6,4 +6,5 @@ data class CentersEntity(
     val lon: String,
     val lat: String,
     val info: String,
+    val image_photo: String
 )

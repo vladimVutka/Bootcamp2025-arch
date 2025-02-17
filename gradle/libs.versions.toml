@@ -1,5 +1,5 @@
 [versions]
-agp = "8.8.0"
+agp = "8.7.3"
 kotlin = "2.1.0"
 coreKtx = "1.15.0"
 lifecycleRuntimeKtx = "2.8.7"
@@ -12,6 +12,7 @@ ktor = "3.0.3"
 parseAndroid = "1.17.2"
 playServicesMaps = "18.1.0"
 playServicesMapsVersion = "19.0.0"
+fragment = "1.8.6"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -30,6 +31,7 @@ parse-android = { module = "com.parse:parse-android", version.ref = "parseAndroi
 picasso = { group = "com.squareup.picasso", name = "picasso", version = "2.8" }
 play-services-maps = { module = "com.google.android.gms:play-services-maps", version.ref = "playServicesMaps" }
 play-services-maps-v1900 = { module = "com.google.android.gms:play-services-maps", version.ref = "playServicesMapsVersion" }
+androidx-fragment = { group = "androidx.fragment", name = "fragment", version.ref = "fragment" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

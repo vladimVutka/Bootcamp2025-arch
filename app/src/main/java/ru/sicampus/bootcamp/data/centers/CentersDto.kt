@@ -14,6 +14,8 @@ data class CentersDto(
     val lon: String,
     @SerialName("lat")
     val lat: String,
+    @SerialName("image_photo")
+    val image_photo: String,
     @SerialName("info")
     val info: String,
 )
